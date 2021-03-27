@@ -4,7 +4,6 @@ import java.security.MessageDigest
 import javax.xml.bind.DatatypeConverter
 
 fun main() {
-    hash()
     hashSimplified()
 }
 
@@ -16,43 +15,9 @@ fun hashSimplified() {
     hashValue(message, SHA512, doPrint)
 }
 
-fun hash() {
-    val msg = "Hello world!"
-    md5(msg)
-    sha256(msg)
-    sha512(msg)
-}
-
 fun hashValue(message: String, algorithm: String, printHash: Boolean = false): String {
     val value = digestString(message, algorithm)
     if (printHash) { println("$value ($algorithm)") }
-    return value
-}
-
-private fun sha512(message: String, printHash: Boolean = false): String {
-    val algorithm = "SHA-512"
-    val value = digestString(message, algorithm)
-    if (printHash) {
-        println("$value ($algorithm)")
-    }
-    return value
-}
-
-private fun sha256(message: String, printHash: Boolean = false): String {
-    val algorithm = "SHA-256"
-    val value = digestString(message, algorithm)
-    if (printHash) {
-        println("$value ($algorithm)")
-    }
-    return value
-}
-
-private fun md5(message: String, printHash: Boolean = false): String {
-    val algorithm = "MD5"
-    val value = digestString(message, algorithm)
-    if (printHash) {
-        println("$value ($algorithm)")
-    }
     return value
 }
 
