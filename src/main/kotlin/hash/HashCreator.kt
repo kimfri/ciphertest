@@ -3,7 +3,7 @@ package hash
 import java.security.MessageDigest
 import javax.xml.bind.DatatypeConverter
 
-class HashCretor {
+class HashCreator {
 
     fun hashSimplified() {
         val message = "Hello world"
@@ -13,7 +13,7 @@ class HashCretor {
         getHashValue(message, SHA512, doPrint)
     }
 
-    private fun getHashValue(message: String,
+    fun getHashValue(message: String,
                              algorithm: String,
                              printHash: Boolean = false
     ): String {
@@ -31,8 +31,8 @@ class HashCretor {
 
     companion object {
 
-        private const val MD5 = "MD5"
-        private const val SHA256 = "SHA-256"
-        private const val SHA512 = "SHA-512"
+        const val MD5 = "MD5"
+        const val SHA256 = "SHA-256"
+        const val SHA512 = "SHA-512"
     }
 }
