@@ -3,6 +3,7 @@
 
 #build direcotry
 build
+.gradle
 # Log file
 *.log
 
