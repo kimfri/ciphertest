@@ -16,7 +16,7 @@ import java.util.Date
 private const val path = "c:\\Users\\kimfr\\utv\\keys\\"
 
 fun main() {
-    signFile()
+//    signFile()
     verifyFileSignature()
     info()
 }
@@ -43,7 +43,7 @@ private fun verifyFileSignature() {
 }
 
 fun sign(signingContext: SigningContext) {
-    println("<fun kalle>")
+    println("<fun sign>")
     val keyStore = KeyStore.getInstance("PKCS12")
     keyStore.load(FileInputStream(signingContext.getKeystoreFilePath()), signingContext.keystorePassword)
     val privateKey = keyStore.getKey(signingContext.alias, signingContext.keystorePassword) as PrivateKey
@@ -60,7 +60,7 @@ fun sign(signingContext: SigningContext) {
 }
 
 fun verify(signingContext: SigningContext) {
-    println("<fun pelle>")
+    println("<fun verify>")
     val keyStore = KeyStore.getInstance("PKCS12")
     keyStore.load(FileInputStream(signingContext.getKeystoreFilePath()), signingContext.keystorePassword)
     val certificate: Certificate = keyStore.getCertificate(signingContext.alias)
@@ -78,7 +78,7 @@ fun verify(signingContext: SigningContext) {
 }
 
 fun printKeystoreInfo(signingContext: SigningContext) {
-    println("<fun quintus>")
+    println("<fun printKeystoreInfo>")
     val keyStore = KeyStore.getInstance("PKCS12")
     keyStore.load(FileInputStream(signingContext.getKeystoreFilePath()), signingContext.keystorePassword)
     val privateKey = keyStore.getKey(signingContext.alias, signingContext.keystorePassword) as PrivateKey

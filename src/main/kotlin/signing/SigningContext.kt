@@ -4,14 +4,14 @@ data class SigningContext(
     val keystore: String,
     val keystorePassword: CharArray,
     val alias: String,
-    val intputFile: String = "message.txt",
+    val inputFile: String = "message.txt",
     val path: String = "c:\\Users\\kimfr\\utv\\keys\\",
     val signatureFile: String = "digital_signature_2",
     val algorithm: String = "SHA256withRSA"
 ) {
     fun getKeystoreFilePath() = path + keystore
 
-    fun getInputFilePath() = path + intputFile
+    fun getInputFilePath() = path + inputFile
 
     fun getSignatureFilePath() = path + signatureFile
 
